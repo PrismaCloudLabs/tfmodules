@@ -23,5 +23,5 @@ resource "aws_security_group" "instance_sg" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags =merge(var.tags, { Name = var.name })
+  tags =merge(var.tags, { Name = "${var.name}-sg" })
 }
