@@ -1,7 +1,14 @@
+data "aws_vpc" "this" {
+  filter {
+    name   = "tag:Name"
+    values = [ var.vpc_name_search ]
+  }
+}
+
 resource "aws_security_group" "instance_sg" {
   name        = "${var.name}-sg"
   description = "Security Group for ${var.name}"
-  vpc_id      = var.vpcId
+  vpc_id      = data.aws_vpc.this.id
 
   dynamic "ingress" {
     for_each = { for port in var.allowed_ports : port => port }

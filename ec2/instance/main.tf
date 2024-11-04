@@ -2,8 +2,19 @@ data "aws_ami" "aws_linux" {
   most_recent = true
   filter {
     name   = "product-code"
-    values = ["8acfvh6bldsr1ojb0oe3n8je5"]
+    values = [ var.product_code ]
   }
+}
+
+data "aws_subnets" "this" {
+  filter {
+    name   = "tag:Name"
+    values = [ var.vpc_subnet_name_search ]
+  }
+}
+
+locals {
+  sshkeyName = var.sshkey_name ? var.sshkey_name : "sshkey-${var.region}"
 }
 
 # // ------------------------------------------------------------------------------------
@@ -14,8 +25,8 @@ resource "aws_instance" "this" {
 
   ami                    = data.aws_ami.aws_linux.id
   instance_type          = var.instance_type 
-  key_name               = "sshkey-${var.region}"
-  subnet_id              = var.public_subnet_id[0]
+  key_name               = local.sshkeyName
+  subnet_id              = data.aws_subnets.this[0].id
   private_ip             = var.private_ip
   vpc_security_group_ids = [ var.aws_security_group_id ]
   root_block_device {
