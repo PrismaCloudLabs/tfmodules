@@ -26,7 +26,7 @@ resource "aws_instance" "this" {
   ami                    = data.aws_ami.aws_linux.id
   instance_type          = var.instance_type 
   key_name               = local.sshkeyName
-  subnet_id              = data.aws_subnets.this[0].id
+  subnet_id              = data.aws_subnets.this.ids[0]
   private_ip             = var.private_ip
   vpc_security_group_ids = [ var.aws_security_group_id ]
   root_block_device {
