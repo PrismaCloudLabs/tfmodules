@@ -2,10 +2,6 @@ variable "region" {
   type = string
 }
 
-variable "public_subnet_id" {
-  type = list(any)
-}
-
 variable "instance_profile" {
   type = string
 }
@@ -16,7 +12,8 @@ variable "product_code" {
 }
 
 variable "sshkey_name" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "name" {

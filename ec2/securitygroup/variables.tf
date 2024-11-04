@@ -1,7 +1,3 @@
-variable "vpcId" {
-  type = string
-}
-
 variable "name" {
   type = string
 }
