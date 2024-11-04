@@ -14,7 +14,7 @@ data "aws_subnets" "this" {
 }
 
 locals {
-  sshkeyName = var.sshkey_name ? var.sshkey_name : "sshkey-${var.region}"
+  sshkeyName = var.sshkey_name != null ? var.sshkey_name : "sshkey-${var.region}"
 }
 
 # // ------------------------------------------------------------------------------------
