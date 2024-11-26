@@ -13,8 +13,31 @@ data "aws_subnets" "this" {
   }
 }
 
-locals {
-  sshkeyName = var.sshkey_name != null ? var.sshkey_name : "sshkey-${var.region}"
+# // ------------------------------------------------------------------------------------
+# // Create SSH Private Key
+# 
+resource "tls_private_key" "pk" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "aws_key_pair" "kp" {
+  key_name   = "sshkey-${var.region}"
+  public_key = tls_private_key.pk.public_key_openssh
+}
+
+# // ------------------------------------------------------------------------------------
+# // Store Private Key in AWS Secrets Manager
+# 
+
+resource "aws_secretsmanager_secret" "ssh_private_key" {
+  name                    = "ssh_private_key-${var.region}"
+  recovery_window_in_days = 0 # Allow immediate deletion of secrets manager so name can be re-used
+}
+
+resource "aws_secretsmanager_secret_version" "ssh_private_key_version" {
+  secret_id     = aws_secretsmanager_secret.ssh_private_key.id
+  secret_string = tls_private_key.pk.private_key_pem
 }
 
 # // ------------------------------------------------------------------------------------
@@ -25,7 +48,7 @@ resource "aws_instance" "this" {
 
   ami                    = data.aws_ami.aws_linux.id
   instance_type          = var.instance_type 
-  key_name               = local.sshkeyName
+  key_name               = aws_key_pair.kp.key_name
   subnet_id              = data.aws_subnets.this.ids[0]
   private_ip             = var.private_ip
   vpc_security_group_ids = [ var.aws_security_group_id ]
@@ -33,7 +56,6 @@ resource "aws_instance" "this" {
     volume_size = 20
   }
   associate_public_ip_address = true
-  iam_instance_profile = var.instance_profile
 
   lifecycle {
     ignore_changes = [associate_public_ip_address]
