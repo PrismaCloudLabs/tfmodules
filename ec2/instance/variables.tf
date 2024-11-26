@@ -2,18 +2,9 @@ variable "region" {
   type = string
 }
 
-variable "instance_profile" {
-  type = string
-}
-
 variable "product_code" {
   type    = string
   default = "8acfvh6bldsr1ojb0oe3n8je5" #Amazon Linux 2023 AMI
-}
-
-variable "sshkey_name" {
-  type    = string
-  default = null
 }
 
 variable "name" {
