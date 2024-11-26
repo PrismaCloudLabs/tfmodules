@@ -1,0 +1,19 @@
+name: "Release Pipeline"
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: release-please-action
+        uses: googleapis/release-please-action@v4.1.3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: terraform-module
