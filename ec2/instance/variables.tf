@@ -38,3 +38,8 @@ variable "aws_security_group_id" {
 variable "tags" {
   type = map(any)
 }
+
+variable "instance_profile" {
+  type    = string
+  default = ""
+}
