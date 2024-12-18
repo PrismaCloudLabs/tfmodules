@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.0.1...v2.1.0) (2024-12-18)
+
+
+### Features
+
+* added iam instance profile ([#6](https://github.com/PrismaCloudLabs/tfmodules/issues/6)) ([d27eea5](https://github.com/PrismaCloudLabs/tfmodules/commit/d27eea52da3ec295d83d614816a3bf6bd8c675a6))
+
 ## [2.0.1](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.0.0...v2.0.1) (2024-11-26)
 
 
