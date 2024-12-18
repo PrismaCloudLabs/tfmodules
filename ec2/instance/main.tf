@@ -52,6 +52,7 @@ resource "aws_instance" "this" {
   subnet_id              = data.aws_subnets.this.ids[0]
   private_ip             = var.private_ip
   vpc_security_group_ids = [ var.aws_security_group_id ]
+  iam_instance_profile   = var.instance_profile != "" ? var.instance_profile : null
   root_block_device {
     volume_size = 20
   }
