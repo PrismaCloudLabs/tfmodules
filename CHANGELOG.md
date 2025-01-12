@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.1.0...v2.2.0) (2025-01-12)
+
+
+### Features
+
+* splitting sshkey to own module ([#8](https://github.com/PrismaCloudLabs/tfmodules/issues/8)) ([43bfce2](https://github.com/PrismaCloudLabs/tfmodules/commit/43bfce28dc32cb721e3247427da5ce7af4eaea57))
+
 ## [2.1.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.0.1...v2.1.0) (2024-12-18)
 
 
