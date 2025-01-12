@@ -21,6 +21,11 @@ variable "instance_type" {
   default = "t2.small"
 }
 
+variable "keyname" {
+  type    = string
+  default = ""
+}
+
 variable "private_ip" {
   type    = string
   default = null
