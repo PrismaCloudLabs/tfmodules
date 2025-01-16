@@ -1,17 +1,21 @@
 data "aws_ami" "aws_linux" {
   owners = ["amazon"]
+  most_recent = true
 
   filter {
     name   = "name"
     values = ["al2023-ami-*"]
   }
 
+ filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+
   filter {
     name   = "state"
     values = ["available"]
   }
-
-  most_recent = true
 }
 
 data "aws_subnets" "this" {
