@@ -43,7 +43,7 @@ resource "aws_instance" "this" {
   vpc_security_group_ids = [ var.aws_security_group_id ]
   iam_instance_profile   = var.instance_profile != "" ? var.instance_profile : null
   root_block_device {
-    volume_size = 20
+    volume_size = 50
   }
   associate_public_ip_address = true
 
