@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.0...v2.2.1) (2025-01-16)
+
+
+### Bug Fixes
+
+* changed ami search to not use product id ([#10](https://github.com/PrismaCloudLabs/tfmodules/issues/10)) ([2551976](https://github.com/PrismaCloudLabs/tfmodules/commit/25519767ce39373c2805e4fbc948db05734ec715))
+
 ## [2.2.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.1.0...v2.2.0) (2025-01-12)
 
 
