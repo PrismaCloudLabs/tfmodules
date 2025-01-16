@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.2...v2.2.3) (2025-01-16)
+
+
+### Bug Fixes
+
+* increased volume size to 50 ([#14](https://github.com/PrismaCloudLabs/tfmodules/issues/14)) ([47eed93](https://github.com/PrismaCloudLabs/tfmodules/commit/47eed936601b67d39582f2a8bfd73100ebaf3430))
+
 ## [2.2.2](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.1...v2.2.2) (2025-01-16)
 
 
