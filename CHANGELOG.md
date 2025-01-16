@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.1...v2.2.2) (2025-01-16)
+
+
+### Bug Fixes
+
+* changed ami architecture to x86 ([06a4cc7](https://github.com/PrismaCloudLabs/tfmodules/commit/06a4cc71ed1a80536c6d1c5e4d52e1f26f6a9d8a))
+
 ## [2.2.1](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.0...v2.2.1) (2025-01-16)
 
 
