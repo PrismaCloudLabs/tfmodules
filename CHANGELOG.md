@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.3...v2.3.0) (2025-04-22)
+
+
+### Features
+
+* adding EKS cluster ([#16](https://github.com/PrismaCloudLabs/tfmodules/issues/16)) ([d4f9d21](https://github.com/PrismaCloudLabs/tfmodules/commit/d4f9d21fd4666c95f97e3663383559f038bfdd15))
+
 ## [2.2.3](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.2...v2.2.3) (2025-01-16)
 
 
