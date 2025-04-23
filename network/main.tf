@@ -24,10 +24,13 @@ resource "aws_subnet" "public" {
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   map_public_ip_on_launch = true
   tags = {
-    Name                                            = "hub-public-subnet"
-    "kubernetes.io/role/elb"                        = 1
-    "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
-    Environment                                     = "Dev"
+    Name                                                   = "hub-public-subnet"
+    "kubernetes.io/role/elb"                               = 1
+    "kubernetes.io/cluster/${var.eks_cluster_name}"        = "shared"
+    "service.beta.kubernetes.io/aws-load-balancer-type"    = "nlb"
+    "service.beta.kubernetes.io/aws-load-balancer-scheme"  = "internet-facing"
+    "service.beta.kubernetes.io/aws-load-balancer-subnets" = "hub-public-subnet"
+    Environment                                            = "Dev"
   }
 }
 
