@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.3](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.3.2...v2.3.3) (2025-06-02)
+
+
+### Bug Fixes
+
+* change tag interaction ([#18](https://github.com/PrismaCloudLabs/tfmodules/issues/18)) ([ae71cd3](https://github.com/PrismaCloudLabs/tfmodules/commit/ae71cd34ac2b9777a45d245aa26441917e11f8a3))
+
 ## [2.3.0](https://github.com/PrismaCloudLabs/tfmodules/compare/v2.2.3...v2.3.0) (2025-04-22)
 
 
