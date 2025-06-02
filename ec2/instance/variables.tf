@@ -7,10 +7,6 @@ variable "product_code" {
   default = "8acfvh6bldsr1ojb0oe3n8je5" #Amazon Linux 2023 AMI
 }
 
-variable "name" {
-  type = string
-}
-
 variable "install_script" {
   type    = string
   default = "scripts/vulnerable.sh"
