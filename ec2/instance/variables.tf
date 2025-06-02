@@ -42,6 +42,9 @@ variable "aws_security_group_id" {
 
 variable "tags" {
   type = map(any)
+  default = {
+    Terraform = true
+  }
 }
 
 variable "instance_profile" {
