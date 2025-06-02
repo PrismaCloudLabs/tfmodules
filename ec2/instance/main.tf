@@ -52,5 +52,5 @@ resource "aws_instance" "this" {
   }
 
   user_data = file(var.install_script)
-  tags = merge(var.tags, { Name = var.name })
+  tags = merge(var.tags)
 }
