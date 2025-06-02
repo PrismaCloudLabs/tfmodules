@@ -1,7 +1,3 @@
-variable "name" {
-  type = string
-}
-
 variable "vpc_name_search" {
   type    = string
   default = "hub-vpc"
