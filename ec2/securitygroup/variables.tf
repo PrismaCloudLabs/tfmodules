@@ -15,4 +15,7 @@ variable "allowed_ports" {
 
 variable "tags" {
   type = map(any)
+  default = {
+    Terraform = true
+  }
 }
