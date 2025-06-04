@@ -2,9 +2,8 @@ variable "name" {
   type = string
 }
 
-variable "vpc_name_search" {
+variable "vpc_id" {
   type    = string
-  default = "hub-vpc"
 }
 
 variable "allowed_cidrs" {
