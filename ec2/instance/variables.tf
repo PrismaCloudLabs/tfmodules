@@ -31,9 +31,8 @@ variable "private_ip" {
   default = null
 }
 
-variable "vpc_subnet_name_search" {
+variable "subnet_id" {
   type    = string
-  default = "hub-public-subnet"
 }
 
 variable "aws_security_group_id" {
