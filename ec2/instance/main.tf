@@ -1,6 +1,5 @@
 data "aws_ami" "aws_linux" {
   owners = ["amazon"]
-  most_recent = true
 
   filter {
     name   = "name"
@@ -18,13 +17,6 @@ data "aws_ami" "aws_linux" {
   }
 }
 
-data "aws_subnets" "this" {
-  filter {
-    name   = "tag:Name"
-    values = [ var.vpc_subnet_name_search ]
-  }
-}
-
 locals {
   sshkey = "sshkey-${var.region}"
 }
@@ -38,7 +30,7 @@ resource "aws_instance" "this" {
   ami                    = data.aws_ami.aws_linux.id
   instance_type          = var.instance_type 
   key_name               = var.keyname == "" ? local.sshkey : var.keyname
-  subnet_id              = data.aws_subnets.this.ids[0]
+  subnet_id              = var.subnet_id
   private_ip             = var.private_ip
   vpc_security_group_ids = [ var.aws_security_group_id ]
   iam_instance_profile   = var.instance_profile != "" ? var.instance_profile : null
